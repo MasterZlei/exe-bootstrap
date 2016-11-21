@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+			<!-- 新 Bootstrap 核心 CSS 文件 -->
+			<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+			<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+			<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+			<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+			<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<style>
+			*{box-sizing: border-box;}
+			a{color: red;}
+			a:hover{color: red;text-decoration: none;}
+			html,body{background: #ebebeb;color: #505050;position: relative;line-height: 1.75em}
+			body{font-size: 14px;}
+			header{width: 100%;background: url(bootstrap练习/top_bg.jpg) no-repeat center 20%;padding-top: 64px;padding-bottom: 64px; text-align: center;}
+			 .header_body{width: 1170px; padding-left: 15px;padding-right: 15px;margin-right: auto;margin-left: auto;}
+			 .row{margin-left: -15px;margin-right: -15px;}
+			 .row .col-sm-12 h1{color: white;font-size: 3em;}
+			 .btn-doc{position: relative;bottom: -40px;border: 1px solid #f1362f;background: transparent;}
+			 .btn-default{color: #ffffff;background: #f4645f; transition: all 0.3s linear}
+			 .btn-default:hover{background: #333;color: white;border: 1px solid transparent;}
+			.main-nav{margin-bottom: 35px;border-bottom: 2px solid #e1e1d3;border-top: 1px solid #ebebeb;
+				background: #fff;text-align: center;}
+			@media (max-width: 768px){.btn-doc{display: block;width: 50%;margin-left: auto;margin-right: auto;margin-top: 10px;}}
+			/*@media (min-width: 768px){.container{width:750px}}
+			@media (min-width: 992px){.container{width:970px}}
+			@media (min-width: 1200px){.container{width:1170px}}*/
+			/*.container{padding-left: 15px;padding-right: 15px;margin-left: auto;margin-right: auto;}*/
+			.navbar{margin-bottom: 0;}
+			ul{margin: 0;padding: 0;}
+			.menu li a{line-height: 4em;text-decoration: none;color: #333;padding: 0 21px;display: block;}
+			.menu li a:hover{color: red;}
+			.menu li:nth-child(n){border-bottom: 2px transparent solid;}
+			.menu li:nth-child(n):hover{border-bottom: 2px solid red;}
+			#back-to-top{position: fixed;bottom: 10px;right: 10px;background: rgba(244,100,95,0.6);color: white;text-align: center;z-index: 1;border-radius: 2px;text-decoration: none;}
+			#back-to-top:hover{background: rgba(244,100,95,1)}
+			#back-to-top div{width: 30px;height: 30px;line-height: 30px;}
+			.post{background: #ffffff;padding:35px;text-align: center;margin-bottom: 35px;}
+			.post img{width: 100%;}
+			.post-title{font-weight: 400;margin:0;font-size: 2em;line-height: 1.2em;}
+			.post-title a{text-decoration: none;color: #303030;width: 90%;display: block;margin:0 auto;}
+			h1{text-align: center;}
+			.post-meta{margin-top:14px;color: #959595;}
+			.post-meta a{color: red;}
+			.wrap-pic{margin-top: 30px;}
+			.text{margin:30px 0;font-size:18px;text-align: left;}
+			.post-button{text-align: left;}
+			.post-foot{margin-top: 30px;padding-top: 21px;border-top: 1px rgb(173,173,173) dotted;text-align: left}
+			.widget{padding: 21px 30px;background: white;margin-bottom: 35px;}
+			.title{color: #303030;padding-bottom: 7px;margin-bottom: 21px;border-bottom: 1px solid #ebebeb;position: relative; font-size: 1.5em;}
+			.title:after{content: "";width: 90px;height: 1px;background: #f4646f;position: absolute;left: 0;bottom: -1px;}
+			.community p:nth-child(2){color: red;}
+			.community p img{vertical-align: top;}
+			/*.widget a{color: white;}*/
+			.btn-block{display: block; width: 100%;}
+			.btn-biaoqian{background: transparent;color: rgb(173,173,173);margin: 0 7px 7px 0;padding: 2px 7px;border-radius: 0;border-color: #ebebeb;}
+			.btn-biaoqian:hover{background: #f4645f;color: white;}
+			.btn-text{background: #f4645f;color: white;display: inline-block;padding: 6px 12px;line-height: 1.42857143;border-radius: 4px;vertical-align: middle;}
+			.pagination{display: block;text-align: center;margin: 0 0 35px;}
+			footer{background: #202020;padding-top: 35px;}
+			footer .title{color: white;}
+			.footer-widget{padding: 0 30px;margin-bottom: 35px;}
+			.recent-single-post{margin-bottom: 14px;padding-bottom: 14px;border-bottom: 1px #303030 dashed;}
+			.post_title{color: #959595}
+			.post_title:hover{color: rgb(244,95,65);}
+			.date{color: #505050;}
+			.btnb1{border-color: #303030;}
+			.btnb2{border-color: transparent;}
+			.bottom-address{padding: 28px 0;background: #111;}
+			.address a{color: #505050;}
+			.address a:hover{text-decoration:underline; }
+		</style>
+	</head>
+	<body>
+		<a href="#top" id="back-to-top" style="" name=""><div class="fa fa-angle-up">^</div></a>
+		<header id="top"><div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h1>为WEB艺术家创造的PHP框架。</h1>
+					</div>
+					<div class="col-sm-12">
+						<a href="" class="btn btn-default btn-doc" target="_blank">5.1 中文文档</a>
+						<a href="" class="btn btn-default btn-doc">5.0 中文文档</a>
+						<a href="" class="btn btn-default btn-doc">4.2 中文文档</a>
+						<a href="" class="btn btn-default btn-doc">4.1 中文文档</a>
+						<a href="" class="btn btn-default btn-doc">Lumen 中文文档</a>
+						<a href="" class="btn btn-default btn-doc">问答社区</a>					
+					</div>
+				</div>
+			</div></header>
+		<nav class="main-nav"><div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="navbar">
+							<ul class="list-inline menu">
+								<li role="presentation"><a href="">首页</a></li>
+								<li><a href="">Lumen</a></li>
+								<li><a href="">问答社区</a></li>
+								<li><a href="">中文文档</a></li>
+								<li><a href="">下载离线文档</a></li>
+								<li><a href="">API</a></li>
+								<li><a href="">PHP中文手册</a></li>
+								<li><a href="">Composer</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div></nav>
+		<section>
+			<div class="container">
+				<div class="row">
+					<main class="col-md-8 main-content">
+						<article id="69" class="post" >
+							<div class="post-head">
+								<h1 class="post-title"><a href="">Laracon开发者大会快报：听Taylor Otwell 讲解Laravel 5.3 的新特性</a></h1>
+								<div class="post-meta">
+									<span style="margin:0 7px;">作者：<a href="">王赛 </a></span>· <time>2016年7月28日</time>
+								</div>
+								<div class="wrap-pic">
+									<a href=""><img src="bootstrap练习/d0b8c085dec30605e2c3e9e773d00.png" alt=""></a>
+								</div>
+								<div class="text">
+									<p>今天，Taylor Otewell 在 Laracon US 开发者大会上就Laravel 5·3 的特性做了长时间的演讲，演讲内容主要概括为四个方面：Laravel Scout、Laravel Psaaport、Laravel Mailable 和 Laravel Notifications。此次演讲预定是</p>
+								</div>
+								<div class="post-button">
+									<a class="btn btn-default" href="">阅读全文</a>
+								</div>
+								<div class="post-foot">
+									<div><img style="width:15px;height:14px;" src="" alt=""></div>
+								</div>
+							</div>
+						</article>
+						<article id="68" class="post">
+							<div class="post-head">
+								<h1 class="post-title"><a href="">Laracon开发者大会快报：听Taylor Otwell 讲解Laravel 5.3 的新特性</a></h1>
+								<div class="post-meta">
+									<span style="margin:0 7px;">作者：<a href="">王赛 </a></span>· <time>2016年7月28日</time>
+								</div>
+								<div class="wrap-pic">
+									<a href=""><img src="bootstrap练习/d0b8c085dec30605e2c3e9e773d00.png" alt=""></a>
+								</div>
+								<div class="text">
+									<p>今天，Taylor Otewell 在 Laracon US 开发者大会上就Laravel 5·3 的特性做了长时间的演讲，演讲内容主要概括为四个方面：Laravel Scout、Laravel Psaaport、Laravel Mailable 和 Laravel Notifications。此次演讲预定是</p>
+								</div>
+								<div class="post-button">
+									<a class="btn btn-default" href="">阅读全文</a>
+								</div>
+								<div class="post-foot">
+									<div><img style="width:15px;height:14px;" src="" alt=""></div>
+								</div>
+							</div>
+						</article>
+						<article id="67" class="post">
+							<div class="post-head">
+								<h1 class="post-title"><a href="">Laracon开发者大会快报：听Taylor Otwell 讲解Laravel 5.3 的新特性</a></h1>
+								<div class="post-meta">
+									<span style="margin:0 7px;">作者：<a href="">王赛 </a></span>· <time>2016年7月28日</time>
+								</div>
+								<div class="wrap-pic">
+									<a href=""><img src="bootstrap练习/d0b8c085dec30605e2c3e9e773d00.png" alt=""></a>
+								</div>
+								<div class="text">
+									<p>今天，Taylor Otewell 在 Laracon US 开发者大会上就Laravel 5·3 的特性做了长时间的演讲，演讲内容主要概括为四个方面：Laravel Scout、Laravel Psaaport、Laravel Mailable 和 Laravel Notifications。此次演讲预定是</p>
+								</div>
+								<div class="post-button">
+									<a class="btn btn-default" href="">阅读全文</a>
+								</div>
+								<div class="post-foot">
+									<div><img style="width:15px;height:14px;" src="" alt=""></div>
+								</div>
+							</div>
+						</article>
+						<div class="pagination">
+							<span class="btn-text">第1页/共5页</span>
+							<a class="btn btn-default" href="">></a>
+						</div>
+					</main>
+					<aside class="col-md-4 sidebar">
+						<div class="widget">
+							<h4 class="title">社区</h4>
+							<div class="content community">
+								<p>QQ群：4642694081</p>
+								<p><a href=""><img style="width:14px;height:14px;" src="" alt="">问答社区</a></p>
+							</div>
+						</div>
+						<div class="widget">
+							<h4 class="title">下载</h4>
+							<div class=""><a class="btn btn-default" href="">Laravel & Lumen 一键安装包下载</a></div>
+						</div>
+						<div class="widget">
+							<h4 class="title">标签云</h4>
+							<div>
+								<a class="btn btn-default btn-biaoqian" href="">Laravel 5.2</a>
+								<a class="btn btn-default btn-biaoqian" href="">Spark</a>
+								<a class="btn btn-default btn-biaoqian" href="">镜像</a>
+								<a class="btn btn-default btn-biaoqian" href="">新版本发布</a>
+								<a class="btn btn-default btn-biaoqian" href="">LTS</a>
+								<a class="btn btn-default btn-biaoqian" href="">微框架</a>
+								<a class="btn btn-default btn-biaoqian" href="">Lumen</a>
+								<a class="btn btn-default btn-biaoqian" href="">命名空间</a>
+								<a class="btn btn-default btn-biaoqian" href="">Laravel4</a>
+								<a class="btn btn-default btn-biaoqian" href="">Whoops</a>
+								<a class="btn btn-default btn-biaoqian" href="">Event</a>
+								<a class="btn btn-default btn-biaoqian" href="">升级</a>
+								<a class="btn btn-default btn-biaoqian" href="">laravle5</a>
+								<a class="btn btn-default btn-biaoqian" href="">错误页</a>
+								<a class="btn btn-default btn-biaoqian" href="">Laravel 5</a>
+								<a class="btn btn-default btn-biaoqian" href="">Artisan</a>
+								<a class="btn btn-default btn-biaoqian" href="">Laravel 5.1</a>
+								<a class="btn btn-default btn-biaoqian" href="">Lravel</a>
+								<a class="btn btn-default btn-biaoqian" href="">...</a>
+							</div>
+						</div>
+					</aside>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="footer-widget">
+							<div class="title">最新文章</div>
+							<div class="recent-post">
+								<div class="recent-single-post">
+									<a class="post_title" href="">Laracon 开发者大会快报：听 Taylor Otwell 讲解Lrarvel 5.3 的新特性</a>
+									<div class="date">2016年7月28日</div>
+								</div>
+								<div class="recent-single-post">
+									<a class="post_title" href="">Laravel 五岁了</a>
+									<div class="date">2016年6月12日</div>
+								</div>
+								<div class="recent-single-post">
+									<a class="post_title" href="">2016 版 Laravel 系列入门教程（一）</a>
+									<div class="date">2016年6月6日</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="footer-widget">
+							<div class="title">标签云</div>
+							<div class="recent-post">
+								<a class="btn btn-default btn-biaoqian btnb1" href="">Laravel</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">Laravel入门教程</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">Laravel 5</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">Laravel 5.2</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">Eloquent</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">新版本发布</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">Laravel 5.1</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">laravle5</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">Composer</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">PHP</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">ORM</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">Artisan</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">Lunmen</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">LTS</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">安装</a>
+								<a class="btn btn-default btn-biaoqian btnb1" href="">...</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="footer-widget">
+							<div class="title">合作伙伴</div>
+							<div class="recent-post">
+								<div class="recent-single-post">
+									<a class="btn btn-default btn-biaoqian btnb2" href="">Bootstrap中文网</a>
+									<a class="btn btn-default btn-biaoqian btnb2" href="">开放CDN服务</a>
+									<a class="btn btn-default btn-biaoqian btnb2" href="">Grunt中文网</a>
+									<a class="btn btn-default btn-biaoqian btnb2" href="">Gulp中文网</a>
+								</div>
+								<div class="recent-single-post">
+									<a class="btn btn-default btn-biaoqian btnb2" href="">Lodash中文文档</a>
+									<a class="btn btn-default btn-biaoqian btnb2" href="">JQuery中文文档</a>
+								</div>
+								<div class="recent-single-post">
+									<a class="btn btn-default btn-biaoqian btnb2" href="">又拍云</a>
+									<a class="btn btn-default btn-biaoqian btnb2" href="">UCloud</a>
+									<a class="btn btn-default btn-biaoqian btnb2" href="">乐视云</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div class="bottom-address">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12" style="text-align:center;">
+						<span class="address">Copyright © <a href="">Laravel 中文网</a></span> | <span class="address"><a href="">京ICP备11008151号</a></span> | <span class="address">京公网安备11010802014853</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
